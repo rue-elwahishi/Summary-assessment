@@ -59,8 +59,16 @@ function each(coll, f) {
   //wordLengths("hello its me") // [5,3,2]
   
   function wordLengths(str) {
-      // TODO: your code here 
+     var arr = [];
+     var arr1 = [];
+     arr = str.split(" ")
+     for( var i = 0; i < arr.length; i++) {
+       arr1.push(arr[i].length)
   }
+  return arr1;
+    
+   }
+
   
   //=============================================================================
   /*                                  Q2                                    */
@@ -72,7 +80,13 @@ function each(coll, f) {
   // countOccurrences("hello, world!", "l"); // 3
   
   function countOccurrences(string, character) {
-      // your code is here
+      var arr = [];
+      for(var i = 0; i < string.length; i++){
+        if(string[i] === character){
+           arr.push(string[i])
+        }
+      }
+    return arr.length;
   }
   
   //=============================================================================
@@ -84,7 +98,10 @@ function each(coll, f) {
   // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
   
   function wordsLongerThanThree(str) {
-      // TODO: your code here 
+    arr = str.split(' ')
+      return filter(arr, function(element){
+        return element.length > 3
+      })
   }
   
   //=============================================================================
@@ -99,7 +116,11 @@ function each(coll, f) {
   //repeatString('dog', 3); // => 'dog' + 'dog' + 'dog' => 'dogdogdog'
   
   function repeatString(str, count) { 
-   // TODO: your code here 
+    if(count === 0) {
+      return ''
+    } 
+    return str + repeatString(str, count - 1)
+       
   } 
    
   
@@ -129,6 +150,22 @@ function each(coll, f) {
   // pizza.eatSlice();
   
   // Write your code here .....
+  function makePizza(crust, size, numberOfSlice){
+
+    return {
+      crust: crust,
+      size: size,
+      numberOfSlice: numberOfSlice, 
+      ingredients: addIngredients
+
+      }
+        function addIngredients(string){
+      return string
+     }  
+     return addIngredients
+
+
+  }
   
   //=============================================================================
   /*                                  Q6                                      */
@@ -155,6 +192,16 @@ function each(coll, f) {
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
   
   // Write your code here .....
+function ReadingList (name, array, array1)
+      var obj = {};
+      obj.read = 0;
+      obj.unRead = array;
+      obj.toRead = array1;
+      obj.currentRead = name;
+      obj.readbooks = [];
+      obj.AddBook = function(name){
+        this.toRead.push(name)
+      }
   
   //=============================================================================
   /*                                  Q7                                       */
